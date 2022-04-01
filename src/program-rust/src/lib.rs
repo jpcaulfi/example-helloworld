@@ -9,6 +9,11 @@ use solana_program::{
 };
 
 /// Define the type of state stored in accounts
+/// 
+/// Borsh allows us to serialize any objects into 
+///     a canonical & deterministic set of bytes.
+/// This is because the programs on Solana must be 
+///     parsed in BPF format.
 #[derive(BorshSerialize, BorshDeserialize, Debug)]
 pub struct GreetingAccount {
     /// number of greetings
